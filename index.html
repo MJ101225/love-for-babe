@@ -18,12 +18,6 @@ h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
 .music-btn{background:#fff;border:2px solid #8b5a3c;color:#8b5a3c;padding:10px 20px;border-radius:25px;font-size:13px;margin-top:8px;cursor:pointer;font-weight:bold}
 .letter{display:none;background:#f0e6d8;border-radius:20px;padding:20px;text-align:left;color:#3d2314;line-height:1.7;font-size:15px;margin-top:20px;max-height:70vh;overflow-y:auto}
 .letter.show{display:block}
-.lyrics{background:#3d2314;color:#fdf6ee;border-radius:15px;padding:20px;margin-top:15px;display:none;text-align:center}
-.lyrics.show{display:block}
-.lyrics-title{font-size:17px;margin-bottom:15px;color:#ffcc99;font-weight:bold}
-.line{margin:12px 0;font-size:14px;opacity:0.3;transition:all 0.6s;transform:scale(0.95)}
-.line.active{opacity:1;transform:scale(1.08);color:#ffcc99;font-weight:bold;font-size:16px;text-shadow:0 0 15px #ffcc99}
-.line.past{opacity:0.5;font-size:12px}
 </style>
 </head>
 <body>
@@ -38,29 +32,9 @@ h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
 
 <button class="btn" onclick="openLetter()">Click me Babe 🤎</button>
 <br>
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Our Song - No Ads</button>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Our Song</button>
 
-<audio id="audio" src="song.mp3"></audio>
-
-<div class="lyrics" id="lyricsBox">
-<div class="lyrics-title">🎵 I Love You Too Much 🤎</div>
-<div id="lyricLines">
-<div class="line" data-time="1">I love you too much</div>
-<div class="line" data-time="4">To live without you loving me back</div>
-<div class="line" data-time="9">I love you too much</div>
-<div class="line" data-time="13">Heaven's my witness and this is a fact</div>
-<div class="line" data-time="19">I know I belong</div>
-<div class="line" data-time="22">When I sing this song</div>
-<div class="line" data-time="25">There's love above love and it's ours</div>
-<div class="line" data-time="30">Cause I love you too much 🤎</div>
-<div class="line" data-time="38">Heaven knows your name I've been praying</div>
-<div class="line" data-time="42">To have you come here by my side</div>
-<div class="line" data-time="46">Without you a part of me's missing</div>
-<div class="line" data-time="50">Just to make you my own, I will fight</div>
-<div class="line" data-time="56">I love you too much Babe 🤎</div>
-<div class="line" data-time="62">Forever & Always, Ikaw lang</div>
-</div>
-</div>
+<audio id="audio" src="song.mp3" loop></audio>
 
 <div class="letter" id="letter">
 I just want to say thank you for everything, salamat sa lahat ng pag mamahal na binigay mo sakin, salamat dahil naranasan ko at naramdaman ko na pwede rin pala akong mahalin at tratuhin ng Tama at Hindi Yung ginagawa lang akong basura and I just want to say sorry...sorry for everything Babe, sorry sa lahat lahat ng pag kakamali ko at sorry kung lagi kitang inaaway pero kahit na ganon eto ang lagi mong tatandaan minahal kita at mahal na mahal kita higit pa sa sarili ko. Until now I'm still waiting for you, Nandito lang ako para sayo, mag iingat ka lagi Babi ko, I will love you forever and ever mwah!!! 😘🖤
@@ -73,38 +47,21 @@ setInterval(createHeart,300);
 
 let isPlaying=false;
 let audio=document.getElementById('audio');
-let lines=document.querySelectorAll('.line');
-
-audio.addEventListener('timeupdate',()=>{
- let t=audio.currentTime;
- lines.forEach((line,i)=>{
-   let time=parseFloat(line.dataset.time);
-   let nextTime=lines[i+1]?parseFloat(lines[i+1].dataset.time):999;
-   if(t>=time && t<nextTime){
-     lines.forEach(l=>l.classList.remove('active'));
-     line.classList.add('active');
-     if(i>0) lines[i-1].classList.add('past');
-   }
- });
-});
 
 function toggleMusic(){
- const lyrics=document.getElementById('lyricsBox');
  const btn=document.getElementById('musicBtn');
  if(!isPlaying){
    audio.play();
-   lyrics.classList.add('show');
    btn.innerHTML='⏸️ Pause Our Song';
    isPlaying=true;
  } else {
    audio.pause();
-   btn.innerHTML='🎵 Play Our Song - No Ads';
+   btn.innerHTML='🎵 Play Our Song';
    isPlaying=false;
  }
 }
 function openLetter(){
  document.getElementById('letter').classList.toggle('show');
- document.getElementById('lyricsBox').classList.add('show');
  if(!isPlaying){ toggleMusic(); }
 }
 </script>
