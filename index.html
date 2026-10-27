@@ -14,10 +14,19 @@ body{background:#1a0f0a;font-family:serif;display:flex;justify-content:center;pa
 h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
 .sub{letter-spacing:3px;color:#8b5a3c;font-size:13px;margin-bottom:15px}
 .msg{color:#5a3a2a;font-size:16px;line-height:1.5;margin:10px 0}
-.btn{background:#4a2c1f;color:#fdf6ee;border:none;padding:14px 30px;border-radius:30px;font-size:16px;font-weight:bold;margin:15px 0;cursor:pointer;width:100%;max-width:250px}
+.btn{background:#4a2c1f;color:#fdf6ee;border:none;padding:14px 30px;border-radius:30px;font-size:16px;font-weight:bold;margin:10px 0;cursor:pointer;width:100%;max-width:250px}
+.music-btn{background:#fff;border:2px solid #8b5a3c;color:#8b5a3c;padding:10px 20px;border-radius:25px;font-size:13px;margin-top:8px;cursor:pointer;font-weight:bold}
 .letter{display:none;background:#f0e6d8;border-radius:20px;padding:20px;text-align:left;color:#3d2314;line-height:1.7;font-size:15px;margin-top:20px;max-height:70vh;overflow-y:auto}
 .letter.show{display:block}
-.music-btn{background:transparent;border:2px solid #8b5a3c;color:#8b5a3c;padding:8px 18px;border-radius:20px;font-size:13px;margin-top:10px;cursor:pointer}
+.youtube-box{margin-top:15px;border-radius:15px;overflow:hidden;display:none}
+.youtube-box.show{display:block}
+.youtube-box iframe{width:100%;height:215px;border:0}
+.lyrics{background:#3d2314;color:#fdf6ee;border-radius:15px;padding:15px;margin-top:15px;display:none;text-align:center;font-size:14px;line-height:1.8}
+.lyrics.show{display:block;animation:fadeIn 1s}
+.lyrics p{margin:4px 0;opacity:0;animation:lyricFade 0.8s forwards}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lyricFade{to{opacity:1}}
+.lyrics .highlight{color:#ffcc99;font-weight:bold;font-size:15px}
 </style>
 </head>
 <body>
@@ -32,27 +41,60 @@ h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
 
 <button class="btn" onclick="openLetter()">Click me Babe 🤎</button>
 <br>
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Our Song</button>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play: I Love You Too Much</button>
 
-<audio id="bgMusic" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_2f6d9d5b6d.mp3?filename=romantic-piano-116199.mp3" type="audio/mpeg">
-</audio>
+<div class="youtube-box" id="ytBox">
+<iframe id="ytPlayer" src="https://www.youtube.com/embed/8cX_OJPq6Sw?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="lyrics" id="lyricsBox">
+<div style="font-size:18px;margin-bottom:10px">🎵 I Love You Too Much - Book of Life 🤎</div>
+<p style="animation-delay:0.3s">I love you too much</p>
+<p style="animation-delay:0.8s">To live without you loving me back</p>
+<p style="animation-delay:1.3s">I love you too much</p>
+<p style="animation-delay:1.8s">Heaven's my witness and this is a fact</p>
+<br>
+<p style="animation-delay:2.3s">I know I belong</p>
+<p style="animation-delay:2.8s">When I sing this song</p>
+<p class="highlight" style="animation-delay:3.3s">There's love above love and it's ours</p>
+<p class="highlight" style="animation-delay:3.8s">Cause I love you too much</p>
+<br>
+<p style="animation-delay:4.3s">Heaven knows your name I've been praying</p>
+<p style="animation-delay:4.8s">To have you come here by my side</p>
+<p style="animation-delay:5.3s">Without you a part of me's missing</p>
+<p style="animation-delay:5.8s">Just to make you my own, I will fight</p>
+<br>
+<p class="highlight" style="animation-delay:6.3s">I love you too much Babe 🤎</p>
+</div>
 
 <div class="letter" id="letter">
 I just want to say thank you for everything, salamat sa lahat ng pag mamahal na binigay mo sakin, salamat dahil naranasan ko at naramdaman ko na pwede rin pala akong mahalin at tratuhin ng Tama at Hindi Yung ginagawa lang akong basura and I just want to say sorry...sorry for everything Babe, sorry sa lahat lahat ng pag kakamali ko at sorry kung lagi kitang inaaway pero kahit na ganon eto ang lagi mong tatandaan minahal kita at mahal na mahal kita higit pa sa sarili ko. Until now I'm still waiting for you, Nandito lang ako para sayo, mag iingat ka lagi Babi ko, I will love you forever and ever mwah!!! 😘🖤
 </div>
-
 </div>
+
 <script>
 function createHeart(){const h=document.createElement('div');h.className='heart';h.innerHTML='🤎';h.style.left=Math.random()*100+'vw';h.style.fontSize=(Math.random()*20+15)+'px';h.style.animationDuration=(Math.random()*4+3)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),7000)}
 setInterval(createHeart,300);
 
-let isPlaying = false;
+let isPlaying=false;
 function toggleMusic(){
- const music = document.getElementById('bgMusic');
- const btn = document.getElementById('musicBtn');
- if(isPlaying){ music.pause(); btn.innerHTML='🎵 Play Our Song'; isPlaying=false; }
- else { music.play(); btn.innerHTML='⏸️ Pause Music'; isPlaying=true; }
+ const box=document.getElementById('ytBox');
+ const lyrics=document.getElementById('lyricsBox');
+ const btn=document.getElementById('musicBtn');
+ const player=document.getElementById('ytPlayer');
+ if(!isPlaying){
+   box.classList.add('show');
+   lyrics.classList.add('show');
+   player.src="https://www.youtube.com/embed/8cX_OJPq6Sw?autoplay=1&enablejsapi=1";
+   btn.innerHTML='⏸️ Pause Our Song';
+   isPlaying=true;
+ } else {
+   box.classList.remove('show');
+   lyrics.classList.remove('show');
+   btn.innerHTML='🎵 Play: I Love You Too Much';
+   isPlaying=false;
+   player.src="https://www.youtube.com/embed/8cX_OJPq6Sw?enablejsapi=1";
+ }
 }
 function openLetter(){
  document.getElementById('letter').classList.toggle('show');
@@ -60,4 +102,4 @@ function openLetter(){
 }
 </script>
 </body>
-</html>
+ </html>
