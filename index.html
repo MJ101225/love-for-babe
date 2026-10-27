@@ -17,6 +17,7 @@ h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
 .btn{background:#4a2c1f;color:#fdf6ee;border:none;padding:14px 30px;border-radius:30px;font-size:16px;font-weight:bold;margin:15px 0;cursor:pointer;width:100%;max-width:250px}
 .letter{display:none;background:#f0e6d8;border-radius:20px;padding:20px;text-align:left;color:#3d2314;line-height:1.7;font-size:15px;margin-top:20px;max-height:70vh;overflow-y:auto}
 .letter.show{display:block}
+.music-btn{background:transparent;border:2px solid #8b5a3c;color:#8b5a3c;padding:8px 18px;border-radius:20px;font-size:13px;margin-top:10px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -28,12 +29,35 @@ h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
 <div class="sub">FOREVER & ALWAYS</div>
 <div class="msg">Hi Babe, ginawa ko to para sayo. Ikaw lang forever ko.</div>
 <div style="color:#8b5a3c;font-weight:bold">🤎 - Mark Jay</div>
-<button class="btn" onclick="document.getElementById('letter').classList.toggle('show')">Click me Babe 🤎</button>
+
+<button class="btn" onclick="openLetter()">Click me Babe 🤎</button>
+<br>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Our Song</button>
+
+<audio id="bgMusic" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_2f6d9d5b6d.mp3?filename=romantic-piano-116199.mp3" type="audio/mpeg">
+</audio>
+
 <div class="letter" id="letter">
 I just want to say thank you for everything, salamat sa lahat ng pag mamahal na binigay mo sakin, salamat dahil naranasan ko at naramdaman ko na pwede rin pala akong mahalin at tratuhin ng Tama at Hindi Yung ginagawa lang akong basura and I just want to say sorry...sorry for everything Babe, sorry sa lahat lahat ng pag kakamali ko at sorry kung lagi kitang inaaway pero kahit na ganon eto ang lagi mong tatandaan minahal kita at mahal na mahal kita higit pa sa sarili ko. Until now I'm still waiting for you, Nandito lang ako para sayo, mag iingat ka lagi Babi ko, I will love you forever and ever mwah!!! 😘🖤
 </div>
+
+</div>
 <script>
-function createHeart(){const h=document.createElement('div');h.className='heart';h.innerHTML='🤎';h.style.left=Math.random()*100+'vw';h.style.fontSize=(Math.random()*20+15)+'px';h.style.animationDuration=(Math.random()*4+3)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),7000)}setInterval(createHeart,300);
+function createHeart(){const h=document.createElement('div');h.className='heart';h.innerHTML='🤎';h.style.left=Math.random()*100+'vw';h.style.fontSize=(Math.random()*20+15)+'px';h.style.animationDuration=(Math.random()*4+3)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),7000)}
+setInterval(createHeart,300);
+
+let isPlaying = false;
+function toggleMusic(){
+ const music = document.getElementById('bgMusic');
+ const btn = document.getElementById('musicBtn');
+ if(isPlaying){ music.pause(); btn.innerHTML='🎵 Play Our Song'; isPlaying=false; }
+ else { music.play(); btn.innerHTML='⏸️ Pause Music'; isPlaying=true; }
+}
+function openLetter(){
+ document.getElementById('letter').classList.toggle('show');
+ if(!isPlaying){ toggleMusic(); }
+}
 </script>
 </body>
-  </html>
+</html>
