@@ -2,68 +2,100 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For My Babe</title>
+<title>1 Year & 1 Month • Since Oct 12, 2025 🤎</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#1a0f0a;font-family:serif;display:flex;justify-content:center;padding:20px;min-height:100vh;overflow-y:auto}
-.hearts{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
-.heart{position:absolute;animation:fall linear infinite;color:#8b5a3c;opacity:0.6}
-@keyframes fall{0%{transform:translateY(-10vh)}100%{transform:translateY(110vh)}}
-.card{background:#fdf6ee;border-radius:35px;max-width:420px;width:100%;padding:35px 25px;text-align:center;position:relative;z-index:2;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-.photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:6px solid #8b5a3c;margin:0 auto 20px;display:block}
-h1{color:#3d2314;font-size:32px;letter-spacing:1px;margin:15px 0 5px}
-.sub{letter-spacing:3px;color:#8b5a3c;font-size:13px;margin-bottom:15px}
-.msg{color:#5a3a2a;font-size:16px;line-height:1.5;margin:10px 0}
-.btn{background:#4a2c1f;color:#fdf6ee;border:none;padding:14px 30px;border-radius:30px;font-size:16px;font-weight:bold;margin:10px 0;cursor:pointer;width:100%;max-width:250px}
-.music-btn{background:#fff;border:2px solid #8b5a3c;color:#8b5a3c;padding:10px 20px;border-radius:25px;font-size:13px;margin-top:8px;cursor:pointer;font-weight:bold}
-.letter{display:none;background:#f0e6d8;border-radius:20px;padding:20px;text-align:left;color:#3d2314;line-height:1.7;font-size:15px;margin-top:20px;max-height:70vh;overflow-y:auto}
+body{background:#0f0a07;font-family:'Special Elite',serif;display:flex;justify-content:center;padding:15px;min-height:100vh;color:#2b1a0f}
+.paper{max-width:480px;width:100%;background:#f5e6c8;background-image:radial-gradient(ellipse at top left, rgba(139,90,60,0.15), transparent);border:12px double #3d2314;border-radius:3px;box-shadow:0 0 0 4px #f5e6c8, 0 0 0 8px #3d2314, 0 25px 60px rgba(0,0,0,0.8);padding:22px 18px;position:relative}
+.top-border{border:2px solid #3d2314;border-style:double;padding:14px 10px;text-align:center;margin-bottom:18px}
+h1{font-size:28px;line-height:1.1;letter-spacing:1px;text-transform:uppercase}
+.sub{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;margin-top:6px;opacity:0.8}
+.wax-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+.wax{background:radial-gradient(circle at 30% 30%, #8b5a3c, #4a2c1f);color:#f5e6c8;padding:8px 14px;border-radius:50px;font-size:10px;letter-spacing:1.5px;font-weight:bold;border:2px solid #2b1a0f;transform:rotate(-1deg)}
+.section-title{text-align:center;font-size:14px;letter-spacing:4px;margin:18px 0 10px;border-top:1px dashed #8b5a3c;border-bottom:1px dashed #8b5a3c;padding:8px 0}
+.album{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.polaroid{background:#fdf6ee;padding:6px 6px 22px 6px;box-shadow:0 4px 10px rgba(0,0,0,0.4);transform:rotate(-1.5deg);position:relative}
+.polaroid:nth-child(even){transform:rotate(1.5deg)}
+.polaroid img{width:100%;height:135px;object-fit:cover;filter:sepia(0.6) contrast(1.1);display:block}
+.polaroid::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:38px;height:12px;background:rgba(210,184,163,0.7)}
+.polaroid span{display:block;font-family:'Courier Prime',monospace;font-size:8.5px;margin-top:6px;text-align:center}
+.full{grid-column:1 / -1} .full img{height:200px}
+.reasons{font-family:'Courier Prime',monospace;font-size:11px;line-height:1.7;margin:18px 0;text-align:left;background:rgba(255,255,255,0.25);padding:14px;border:1px solid #d2b8a3}
+.reasons ol{padding-left:16px} .reasons li{margin-bottom:6px}
+.btns{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:16px}
+.btn{background:#2b1a0f;color:#f5e6c8;border:none;padding:12px 22px;font-family:'Special Elite';letter-spacing:2px;font-size:12px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.4);width:100%;max-width:300px}
+.btn2{background:transparent;border:2px solid #3d2314;color:#3d2314}
+.letter{display:none;background:#fff8e1;border:2px solid #8b5a3c;padding:18px;font-family:'Courier Prime',monospace;font-size:12px;line-height:1.8;white-space:pre-line;margin-top:16px}
 .letter.show{display:block}
+.foot{text-align:center;font-family:'Courier Prime';font-size:9px;letter-spacing:2px;margin-top:18px;border-top:1px solid #3d2314;padding-top:10px;opacity:0.7}
 </style>
 </head>
 <body>
-<div class="hearts" id="hearts"></div>
-<div class="card">
-<img src="Photo.jpg" class="photo">
-<div style="font-size:40px">🤎</div>
-<h1>I LOVE YOU MOST BABE</h1>
-<div class="sub">FOREVER & ALWAYS</div>
-<div class="msg">Hi Babe, ginawa ko to para sayo. Ikaw lang forever ko.</div>
-<div style="color:#8b5a3c;font-weight:bold">🤎 - Mark Jay</div>
-
-<button class="btn" onclick="openLetter()">Click me Babe 🤎</button>
-<br>
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Our Song</button>
-
+<div class="paper">
+<div class="top-border">
+<h1>Happy 1 Year & 1 Month Babe!</h1>
+<div class="sub">EST. OCTOBER 12, 2025 • OUR FIRST YEAR + ONE MONTH</div>
+</div>
+<div class="wax-row"><div class="wax">OCT 12, 2025</div><div class="wax">OUR STORY</div><div class="wax">GALLERY</div><div class="wax">FOREVER</div></div>
+<div class="section-title">PHOTO ALBUM — OUR MEMORIES</div>
+<div class="album">
+<div class="polaroid"><img src="Photo.jpg"><span>Photo 1 — Oct 12, 2025</span></div>
+<div class="polaroid"><img src="Photo2.jpg"><span>Photo 2 — First Month</span></div>
+<div class="polaroid"><img src="Photo3.jpg"><span>Photo 3 — Happy Days</span></div>
+<div class="polaroid"><img src="Photo4.jpg"><span>Photo 4 — Always You</span></div>
+<div class="polaroid"><img src="Photo5.jpg"><span>Photo 5 — My Favorite</span></div>
+<div class="polaroid"><img src="Photo6.jpg"><span>Photo 6 — Forever Us</span></div>
+<div class="polaroid"><img src="Photo7.jpg"><span>Photo 7 — 1 Year Ago</span></div>
+<div class="polaroid"><img src="Photo8.jpg"><span>Photo 8 — Still Us</span></div>
+<div class="polaroid"><img src="Photo9.jpg"><span>Photo 9 — My Home</span></div>
+<div class="polaroid"><img src="Photo10.jpg"><span>Photo 10 — Today & Always</span></div>
+<div class="polaroid full"><img src="Photo.jpg"><span>US — Since Oct 12, 2025 • 1 Year & 1 Month 🤎</span></div>
+</div>
+<div class="section-title">10 REASONS WHY I LOVE YOU</div>
+<div class="reasons"><ol>
+<li>YOUR LAUGHTER — Brightens my darkest day.</li>
+<li>YOUR KINDNESS — You treat me with warmth.</li>
+<li>THE WAY YOU HOLD ME — Safe, steady, home.</li>
+<li>YOUR STORIES — Keeps me listening.</li>
+<li>YOUR SMILE — My favorite sight.</li>
+<li>HOW YOU CARE — Thoughtful in small things.</li>
+<li>YOUR COURAGE — Brave when uncertain.</li>
+<li>OUR QUIET MOMENTS — Peaceful, just us.</li>
+<li>YOUR LOYALTY — Since Oct 12, 2025 you stayed.</li>
+<li>YOU — Simply you, my forever.</li>
+</ol></div>
+<div class="btns">
+<button class="btn" onclick="openLetter()"> READ MY LOVE LETTER</button>
+<button class="btn btn2" onclick="toggleMusic()">🎵 PLAY OUR SONG</button>
 <audio id="audio" src="song.mp3" loop></audio>
-
-<div class="letter" id="letter">
-I just want to say thank you for everything, salamat sa lahat ng pag mamahal na binigay mo sakin, salamat dahil naranasan ko at naramdaman ko na pwede rin pala akong mahalin at tratuhin ng Tama at Hindi Yung ginagawa lang akong basura and I just want to say sorry...sorry for everything Babe, sorry sa lahat lahat ng pag kakamali ko at sorry kung lagi kitang inaaway pero kahit na ganon eto ang lagi mong tatandaan minahal kita at mahal na mahal kita higit pa sa sarili ko. Until now I'm still waiting for you, Nandito lang ako para sayo, mag iingat ka lagi Babi ko, I will love you forever and ever mwah!!! 😘🖤
 </div>
-</div>
+<div class="letter" id="letter">My Dearest Babe,
 
+October 12, 2025 — the day our story began.
+
+Happy 1 Year & 1 Month Anniversary satin! 🤎
+
+Kung nasa lumang panahon tayo, isusulat ko to gamit pluma at tinta, sealed with a brown wax heart.
+
+From Oct 12, 2025 hanggang ngayon, 13 months na tayo. 10 pictures lang to sa album, pero bawat isa may kwento, at ikaw ang kwento na paulit-ulit kong babasahin.
+
+Thank you sa 1 year & 1 month na pagmamahal, pag-intindi, at pag-stay.
+
+Sorry sa mga pagkukulang ko Babe, pero tandaan mo — mahal na mahal kita, higit pa sa sarili ko.
+
+More pictures, more memories, more years pa satin. Since Oct 12, 2025, ikaw lang hanggang dulo.
+
+Sealed with all my Babe,
+
+Your Mark Jay 🤎
+Forever & Always — Since Oct 12, 2025</div>
+<div class="foot">SEALED WITH Babe • SINCE OCTOBER 12, 2025 • 1 YEAR & 1 MONTH • FOREVER • 🤎</div>
+</div>
 <script>
-function createHeart(){const h=document.createElement('div');h.className='heart';h.innerHTML='🤎';h.style.left=Math.random()*100+'vw';h.style.fontSize=(Math.random()*20+15)+'px';h.style.animationDuration=(Math.random()*4+3)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),7000)}
-setInterval(createHeart,300);
-
-let isPlaying=false;
-let audio=document.getElementById('audio');
-
-function toggleMusic(){
- const btn=document.getElementById('musicBtn');
- if(!isPlaying){
-   audio.play();
-   btn.innerHTML='⏸️ Pause Our Song';
-   isPlaying=true;
- } else {
-   audio.pause();
-   btn.innerHTML='🎵 Play Our Song';
-   isPlaying=false;
- }
-}
-function openLetter(){
- document.getElementById('letter').classList.toggle('show');
- if(!isPlaying){ toggleMusic(); }
-}
+let isPlaying=false; let audio=document.getElementById('audio');
+function toggleMusic(){if(!isPlaying){audio.play();isPlaying=true}else{audio.pause();isPlaying=false}}
+function openLetter(){document.getElementById('letter').classList.toggle('show');if(!isPlaying){toggleMusic()}}
 </script>
 </body>
-</html>
+                       </html>
