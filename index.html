@@ -6,27 +6,27 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0f0a07;font-family:'Special Elite',serif;display:flex;justify-content:center;padding:15px;min-height:100vh;color:#2b1a0f}
-.paper{max-width:480px;width:100%;background:#f5e6c8;background-image:radial-gradient(ellipse at top left, rgba(139,90,60,0.15), transparent);border:12px double #3d2314;border-radius:3px;box-shadow:0 0 0 4px #f5e6c8, 0 0 0 8px #3d2314, 0 25px 60px rgba(0,0,0,0.8);padding:22px 18px;position:relative}
-.top-border{border:2px solid #3d2314;border-style:double;padding:14px 10px;text-align:center;margin-bottom:18px}
-h1{font-size:28px;line-height:1.1;letter-spacing:1px;text-transform:uppercase}
+body{background:#1a120e;font-family:'Special Elite',serif;display:flex;justify-content:center;padding:15px;min-height:100vh;color:#2b1a0f}
+.paper{max-width:480px;width:100%;background:#fdf2d9;border:10px double #3d2314;border-radius:4px;box-shadow:0 0 0 3px #fdf2d9, 0 0 0 7px #3d2314, 0 25px 60px rgba(0,0,0,0.7);padding:22px 18px;position:relative}
+.top-border{border:2px double #3d2314;padding:14px 10px;text-align:center;margin-bottom:18px;background:rgba(255,255,255,0.3)}
+h1{font-size:28px;line-height:1.1;letter-spacing:1px;text-transform:uppercase;color:#2b1a0f}
 .sub{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;margin-top:6px;opacity:0.8}
 .wax-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0}
-.wax{background:radial-gradient(circle at 30% 30%, #8b5a3c, #4a2c1f);color:#f5e6c8;padding:8px 14px;border-radius:50px;font-size:10px;letter-spacing:1.5px;font-weight:bold;border:2px solid #2b1a0f;transform:rotate(-1deg)}
+.wax{background:#4a2c1f;color:#fdf6ee;padding:8px 14px;border-radius:50px;font-size:10px;letter-spacing:1.5px;font-weight:bold;border:1px solid #2b1a0f}
 .section-title{text-align:center;font-size:14px;letter-spacing:4px;margin:18px 0 10px;border-top:1px dashed #8b5a3c;border-bottom:1px dashed #8b5a3c;padding:8px 0}
-.album{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
-.polaroid{background:#fdf6ee;padding:6px 6px 22px 6px;box-shadow:0 4px 10px rgba(0,0,0,0.4);transform:rotate(-1.5deg);position:relative}
-.polaroid:nth-child(even){transform:rotate(1.5deg)}
-.polaroid img{width:100%;height:135px;object-fit:cover;filter:sepia(0.6) contrast(1.1);display:block}
-.polaroid::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:38px;height:12px;background:rgba(210,184,163,0.7)}
-.polaroid span{display:block;font-family:'Courier Prime',monospace;font-size:8.5px;margin-top:6px;text-align:center}
-.full{grid-column:1 / -1} .full img{height:200px}
-.reasons{font-family:'Courier Prime',monospace;font-size:11px;line-height:1.7;margin:18px 0;text-align:left;background:rgba(255,255,255,0.25);padding:14px;border:1px solid #d2b8a3}
+.album{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0}
+.polaroid{background:#ffffff;padding:7px 7px 24px 7px;box-shadow:0 4px 12px rgba(0,0,0,0.25);transform:rotate(-1.2deg);position:relative;border:1px solid #e8d5b5}
+.polaroid:nth-child(even){transform:rotate(1.2deg)}
+.polaroid img{width:100%;height:145px;object-fit:cover;filter:brightness(1.08) saturate(1.15) contrast(1.02);display:block}
+.polaroid::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:40px;height:14px;background:rgba(210,184,163,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.polaroid span{display:block;font-family:'Courier Prime',monospace;font-size:9px;margin-top:7px;text-align:center;color:#3d2314;font-weight:bold}
+.full{grid-column:1 / -1} .full img{height:210px}
+.reasons{font-family:'Courier Prime',monospace;font-size:11.5px;line-height:1.7;margin:18px 0;text-align:left;background:rgba(255,255,255,0.45);padding:14px;border:1px solid #d2b8a3}
 .reasons ol{padding-left:16px} .reasons li{margin-bottom:6px}
 .btns{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:16px}
-.btn{background:#2b1a0f;color:#f5e6c8;border:none;padding:12px 22px;font-family:'Special Elite';letter-spacing:2px;font-size:12px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.4);width:100%;max-width:300px}
+.btn{background:#2b1a0f;color:#fdf6ee;border:none;padding:12px 22px;font-family:'Special Elite';letter-spacing:2px;font-size:12px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.3);width:100%;max-width:300px}
 .btn2{background:transparent;border:2px solid #3d2314;color:#3d2314}
-.letter{display:none;background:#fff8e1;border:2px solid #8b5a3c;padding:18px;font-family:'Courier Prime',monospace;font-size:12px;line-height:1.8;white-space:pre-line;margin-top:16px}
+.letter{display:none;background:#fffcf0;border:2px solid #8b5a3c;padding:18px;font-family:'Courier Prime',monospace;font-size:12.5px;line-height:1.8;white-space:pre-line;margin-top:16px}
 .letter.show{display:block}
 .foot{text-align:center;font-family:'Courier Prime';font-size:9px;letter-spacing:2px;margin-top:18px;border-top:1px solid #3d2314;padding-top:10px;opacity:0.7}
 </style>
@@ -34,23 +34,23 @@ h1{font-size:28px;line-height:1.1;letter-spacing:1px;text-transform:uppercase}
 <body>
 <div class="paper">
 <div class="top-border">
-<h1>Happy 1 Year & 1 Month Babe!</h1>
+<h1>HAPPY 1 YEAR & 1 MONTH BABE!</h1>
 <div class="sub">EST. OCTOBER 12, 2025 • OUR FIRST YEAR + ONE MONTH</div>
 </div>
 <div class="wax-row"><div class="wax">OCT 12, 2025</div><div class="wax">OUR STORY</div><div class="wax">GALLERY</div><div class="wax">FOREVER</div></div>
 <div class="section-title">PHOTO ALBUM — OUR MEMORIES</div>
 <div class="album">
-<div class="polaroid"><img src="Photo.jpg"><span>Photo 1 — Oct 12, 2025</span></div>
-<div class="polaroid"><img src="Photo2.jpg"><span>Photo 2 — First Month</span></div>
-<div class="polaroid"><img src="Photo3.jpg"><span>Photo 3 — Happy Days</span></div>
-<div class="polaroid"><img src="Photo4.jpg"><span>Photo 4 — Always You</span></div>
-<div class="polaroid"><img src="Photo5.jpg"><span>Photo 5 — My Favorite</span></div>
-<div class="polaroid"><img src="Photo6.jpg"><span>Photo 6 — Forever Us</span></div>
-<div class="polaroid"><img src="Photo7.jpg"><span>Photo 7 — 1 Year Ago</span></div>
-<div class="polaroid"><img src="Photo8.jpg"><span>Photo 8 — Still Us</span></div>
-<div class="polaroid"><img src="Photo9.jpg"><span>Photo 9 — My Home</span></div>
-<div class="polaroid"><img src="Photo10.jpg"><span>Photo 10 — Today & Always</span></div>
-<div class="polaroid full"><img src="Photo.jpg"><span>US — Since Oct 12, 2025 • 1 Year & 1 Month 🤎</span></div>
+<div class="polaroid"><img src="Photo.jpg"><span>Photo 1 - Oct 12, 2025</span></div>
+<div class="polaroid"><img src="Photo2.jpg"><span>Photo 2 - Stay with you</span></div>
+<div class="polaroid"><img src="Photo3.jpg"><span>Photo 3 - Happy Days</span></div>
+<div class="polaroid"><img src="Photo4.jpg"><span>Photo 4 - Always You</span></div>
+<div class="polaroid"><img src="Photo5.jpg"><span>Photo 5 - My Favorite</span></div>
+<div class="polaroid"><img src="Photo6.jpg"><span>Photo 6 - Forever Us</span></div>
+<div class="polaroid"><img src="Photo7.jpg"><span>Photo 7 - Enjoy with you</span></div>
+<div class="polaroid"><img src="Photo8.jpg"><span>Photo 8 - Still Us</span></div>
+<div class="polaroid"><img src="Photo9.jpg"><span>Photo 9 - My Home</span></div>
+<div class="polaroid"><img src="Photo10.jpg"><span>Photo 10 - Today & Always</span></div>
+<div class="polaroid full"><img src="Photo.jpg"><span>US - Since Oct 12, 2025 • 1 Year & 1 Month 🤎</span></div>
 </div>
 <div class="section-title">10 REASONS WHY I LOVE YOU</div>
 <div class="reasons"><ol>
@@ -66,7 +66,7 @@ h1{font-size:28px;line-height:1.1;letter-spacing:1px;text-transform:uppercase}
 <li>YOU — Simply you, my forever.</li>
 </ol></div>
 <div class="btns">
-<button class="btn" onclick="openLetter()"> READ MY LOVE LETTER</button>
+<button class="btn" onclick="openLetter()">READ MY LOVE LETTER</button>
 <button class="btn btn2" onclick="toggleMusic()">🎵 PLAY OUR SONG</button>
 <audio id="audio" src="song.mp3" loop></audio>
 </div>
@@ -86,16 +86,15 @@ Sorry sa mga pagkukulang ko Babe, pero tandaan mo — mahal na mahal kita, higit
 
 More pictures, more memories, more years pa satin. Since Oct 12, 2025, ikaw lang hanggang dulo.
 
+I LOVE YOU MOST BABE KO 😘🖤
+  
 Sealed with all my Babe,
 
 Your Mark Jay 🤎
 Forever & Always — Since Oct 12, 2025</div>
-<div class="foot">SEALED WITH Babe • SINCE OCTOBER 12, 2025 • 1 YEAR & 1 MONTH • FOREVER • 🤎</div>
+<div class="foot">SEALED WITH BABE • SINCE OCTOBER 12, 2025 • 1 YEAR & 1 MONTH • FOREVER • 🤎</div>
 </div>
 <script>
 let isPlaying=false; let audio=document.getElementById('audio');
 function toggleMusic(){if(!isPlaying){audio.play();isPlaying=true}else{audio.pause();isPlaying=false}}
-function openLetter(){document.getElementById('letter').classList.toggle('show');if(!isPlaying){toggleMusic()}}
-</script>
-</body>
-                       </html>
+function openLetter(){document.getElementById('letter').classList.toggle('show');
